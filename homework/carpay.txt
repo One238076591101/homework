@@ -1,0 +1,30 @@
+#include<stdio.h>  
+#include<math.h>  
+  
+int main()  
+{  
+    int come1 = 0, come2 = 0, go1 = 0, go2 = 0, time = 0;  
+  
+    scanf("%d %d", &come1, &come2);  
+    scanf("%d %d", &go1, &go2);  
+  
+    time = (go1 * 60 + go2) - (come1 * 60 + come2);  
+    if(time < 0)  
+    {  
+        time = 24 * 60 - (come1 * 60 + come1) + go1 * 60 + go2;  
+    }  
+  
+    if(time <= 120)  
+    {  
+        printf("%d\n", time / 30 * 30);  
+    }  
+    else if(time > 120 && time < 240)  
+    {  
+        printf("%d\n", (time - 120) / 30 * 40 + 120);  
+    }  
+    else  
+    {  
+        printf("%d\n", (time - 240) / 30 * 60 + 160 + 120);  
+    }  
+    return 0;  
+}  

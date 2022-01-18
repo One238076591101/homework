@@ -1,0 +1,29 @@
+#include <stdio.h>      
+      
+int main()    
+{      
+    int a, b, cnt = 0;      
+    scanf("%d%d", &a, &b);    
+    
+    int matrix[a*b];    
+    
+    for(int i = 0; i < (a * b); i++)    
+    {    
+        scanf("%d",&matrix[i]);    
+    }    
+    for(int y = 0; y < b; y++)    
+    {    
+        for(int x = 0;x < a; x++)    
+        {    
+            cnt++;    
+            printf("%d", matrix[x*b+y]);    
+    
+            if(cnt%a != 0)    
+            {    
+                printf(" ");    
+            }    
+        }    
+        printf("\n");    
+    }  
+    return 0;  
+} 

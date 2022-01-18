@@ -1,0 +1,37 @@
+#include<stdio.h>  
+#include<string.h>  
+#include<ctype.h>  
+  
+int main()  
+{  
+    char input[1000];  
+    char string[] = {'!','@','#','$','%','^','&','*','(',')','_','+','+','`','1','2','3','4','5','6','7','8','9','0','-','=','=','{','}','|','|','q','w','e','r','t','y','u','i','o','p','[',']',':','"','"','a','s','d','f','g','h','j','k','l',';','<','>','?','?','z','x','c','v','b','n','m',',','.','/','/'};  
+    fgets(input, 1000, stdin);  
+      
+    if(input[strlen(input)-1] == '\n')  
+        input[strlen(input)-1] = '\0';  
+  
+    int len = strlen(input);  
+    int lenstr = strlen(string);  
+  
+    for(int i = 0; i < len; i++)  
+    {  
+        input[i] = tolower(input[i]);  
+        for(int j = 0; j < lenstr; j++)  
+        {  
+            if(input[i] == string[j])  
+            {  
+                input[i] = string[j+1];  
+                break;  
+            }  
+            else if(input[i] == ' ')  
+            {  
+                input[i] = ' ';  
+                break;  
+            }  
+        }  
+        printf("%c", input[i]);  
+    }  
+    printf("\n");  
+    return 0;  
+}
